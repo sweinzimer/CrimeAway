@@ -40,6 +40,7 @@
     <h1 class="header__title">CrimeAway</h1>
     <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
     <button id="butAdd" class="headerButton" aria-label="Add"></button>
+    <button id="butSignup" class="headerButton" aria-label="Signup"></button>
     <button id="butUser" class="headerButton" aria-label="User"></button>
   </header>
 
@@ -166,30 +167,47 @@
     </div>
   </div>
 
-  <div class="dialog-container user">
-      <div class="dialog">
-        <div class="dialog-title">Edit User Data</div>
-        <div class="dialog-body">
-          <img src="/icons/snow.png" alt=""/> 
-          <input placeholder="First Name" type="text" required="">
-          <input placeholder="Last Name" type="text" required="" >
-          <card>
-            <div>
-              <select style="display: inline-block;" >
-                  <option value="0">Phone Number</option>
-                  <option value="1">Email</option>
-                  <option value="2">Address</option>
-              </select>
-              <input style="display: inline-block;" type="text" placeholder="Value" required="">
-            </div>
-          </card>
-        </div>
-        <div class="dialog-buttons">
-          <button id="butEditConfirm" class="button">Edit</button>
-          <button id="butEditCancel" class="button">Cancel</button>
-        </div>
+  <div class="dialog-container signup">
+    <div class="dialog">
+      <div class="dialog-title">New User Signup</div>
+      <div class="dialog-body">
+        <input placeholder="First Name" type="text" required>
+        <input placeholder="Last Name" type="text" required>
+        <input placeholder="Phone (optional)" type="tel">
+        <input placeholder="Email (optional)" type="email">
+        <input placeholder="Address (optional)" type="text">
+      </div>
+      <div class="dialog-buttons">
+        <button id="butSignupConfirm" class="button">Signup</button>
+        <button id="butSignupCancel" class="button">Cancel</button>
       </div>
     </div>
+  </div>
+
+  <div class="dialog-container user">
+    <div class="dialog">
+      <div class="dialog-title">Edit User Data</div>
+      <div class="dialog-body">
+        <img src="/icons/snow.png" alt=""/> 
+        <input placeholder="First Name" type="text" required="">
+        <input placeholder="Last Name" type="text" required="" >
+        <card>
+          <div>
+            <select style="display: inline-block;" >
+                <option value="0">Phone Number</option>
+                <option value="1">Email</option>
+                <option value="2">Address</option>
+            </select>
+            <input style="display: inline-block;" type="text" placeholder="Value" required="">
+          </div>
+        </card>
+      </div>
+      <div class="dialog-buttons">
+        <button id="butEditConfirm" class="button">Edit</button>
+        <button id="butEditCancel" class="button">Cancel</button>
+      </div>
+    </div>
+  </div>
 
   <div class="loader">
     <svg viewBox="0 0 32 32" width="32" height="32">

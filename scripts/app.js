@@ -24,6 +24,7 @@
     cardTemplate: document.querySelector('.cardTemplate'),
     container: document.querySelector('.main'),
     addDialog: document.querySelector('.add'),
+    signupDialog: document.querySelector('.signup'),
     userDialog: document.querySelector('.user'),
     daysOfWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   };
@@ -43,6 +44,21 @@
   document.getElementById('butAdd').addEventListener('click', function() {
     // Open/show the add new city dialog
     app.toggleAddDialog(true);
+  });
+
+  document.getElementById('butSignup').addEventListener('click', function() {
+    app.toggleSignupDialog(true);
+  });
+
+  document.getElementById('butSignupConfirm').addEventListener('click', function() {
+    // TODO
+
+    // Hide the dialog.
+    app.toggleSignupDialog(false);
+  });
+
+  document.getElementById('butSignupCancel').addEventListener('click', function() {
+    app.toggleSignupDialog(false);
   });
 
   document.getElementById('butUser').addEventListener('click', function() {
@@ -82,6 +98,14 @@
       app.addDialog.classList.add('dialog-container--visible');
     } else {
       app.addDialog.classList.remove('dialog-container--visible');
+    }
+  };
+
+  app.toggleSignupDialog = function(visible) {
+    if (visible) {
+      app.signupDialog.classList.add('dialog-container--visible');
+    } else {
+      app.signupDialog.classList.remove('dialog-container--visible');
     }
   };
 
