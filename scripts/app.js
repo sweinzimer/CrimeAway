@@ -23,7 +23,8 @@
     spinner: document.querySelector('.loader'),
     cardTemplate: document.querySelector('.cardTemplate'),
     container: document.querySelector('.main'),
-    addDialog: document.querySelector('.dialog-container'),
+    addDialog: document.querySelector('.add'),
+    userDialog: document.querySelector('.user'),
     daysOfWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   };
 
@@ -42,6 +43,10 @@
   document.getElementById('butAdd').addEventListener('click', function() {
     // Open/show the add new city dialog
     app.toggleAddDialog(true);
+  });
+
+  document.getElementById('butUser').addEventListener('click', function() {
+    app.toggleUserDialog(true);
   });
 
   document.getElementById('butAddCity').addEventListener('click', function() {
@@ -77,6 +82,14 @@
       app.addDialog.classList.add('dialog-container--visible');
     } else {
       app.addDialog.classList.remove('dialog-container--visible');
+    }
+  };
+
+  app.toggleUserDialog = function(visible) {
+    if(visible){
+      app.userDialog.classList.add('dialog-container--visible');
+    } else {
+      app.userDialog.classList.remove('dialog-container--visible');
     }
   };
 
