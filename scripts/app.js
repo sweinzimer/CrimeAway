@@ -68,6 +68,12 @@
     // Close the add new city dialog
     app.toggleAddDialog(false);
   });
+  
+  document.getElementById('butEditCancel').addEventListener('click', function() {
+    // Close the user edit dialog
+    app.toggleUserDialog(false);
+  });
+
 
 
   /*****************************************************************************

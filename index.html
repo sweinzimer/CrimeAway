@@ -22,6 +22,7 @@
   <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather PWA</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="styles/inline.css">
 
   <!-- TODO add manifest here -->
@@ -167,29 +168,42 @@
   </div>
 
   <div class="dialog-container user">
-      <div class="dialog">
-        <div class="dialog-title">Edit User Data</div>
-        <div class="dialog-body">
-          <img src="/icons/snow.png" alt=""/> 
-          <input placeholder="First Name" type="text" required="">
-          <input placeholder="Last Name" type="text" required="" >
-          <card>
-            <div>
-              <select style="display: inline-block;" >
-                  <option value="0">Phone Number</option>
-                  <option value="1">Email</option>
-                  <option value="2">Address</option>
-              </select>
-              <input style="display: inline-block;" type="text" placeholder="Value" required="">
+    <div class="dialog">
+      <div class="dialog-title">Edit User Data</div>
+      <div class="dialog-body">
+        <form class="pure-form pure-form-aligned">
+          <fieldset>
+            <div class="pure-u-1 pure-u-md-1-2">
+              <label for="name">First Name</label>
+              <input id="name" class="pure-u-23-24" type="text" placeholder="First Name..">
+            </div>  
+
+            <div class="pure-u-1 pure-u-md-1-2">
+              <label for="password">Last Name</label>
+              <input id="password" class="pure-u-23-24" type="text" placeholder="Last Name..">
             </div>
-          </card>
-        </div>
-        <div class="dialog-buttons">
-          <button id="butEditConfirm" class="button">Edit</button>
-          <button id="butEditCancel" class="button">Cancel</button>
-        </div>
-      </div>
-    </div>
+
+            <div class="pure-u-1 pure-u-md-1-2">
+              <label for="state">Edit This</label>
+              <select id="state" class="pure-control-group">
+                <option>Phone Number</option>
+                <option>Email</option>
+                <option>Address</option>
+              </select>
+              <input style="display: inline-block;" type="text" placeholder="Value" required="">            
+            </div>     
+
+            <form action="/action_page.php">Update Picture
+              <input type="file" name="pic" accept="images/*">
+            </form>
+            <div class="dialog-buttons">
+              <button id="butEditConfirm" class="button">Edit</button>
+              <button id="butEditCancel" class="button">Cancel</button>
+            </div>
+
+          </fieldset>
+        </form>        
+  </div>
 
   <div class="loader">
     <svg viewBox="0 0 32 32" width="32" height="32">
