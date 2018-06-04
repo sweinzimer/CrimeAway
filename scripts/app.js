@@ -36,15 +36,15 @@
    *
    ****************************************************************************/
 
-  document.getElementById('butRefresh').addEventListener('click', function() {
+  //document.getElementById('butRefresh').addEventListener('click', function() {
     // Refresh all of the forecasts
-    app.updateForecasts();
-  });
+    //app.updateForecasts();
+  //});
 
-  document.getElementById('butAdd').addEventListener('click', function() {
+  //document.getElementById('butAdd').addEventListener('click', function() {
     // Open/show the add new city dialog
-    app.toggleAddDialog(true);
-  });
+    //app.toggleAddDialog(true);
+  //});
 
   document.getElementById('butSignup').addEventListener('click', function() {
     app.toggleSignupDialog(true);
@@ -65,7 +65,7 @@
     app.toggleUserDialog(true);
   });
 
-  document.getElementById('butAddCity').addEventListener('click', function() {
+ /* document.getElementById('butAddCity').addEventListener('click', function() {
     // Add the newly selected city
     var select = document.getElementById('selectCityToAdd');
     var selected = select.options[select.selectedIndex];
@@ -79,11 +79,17 @@
     app.saveSelectedCities();
     app.toggleAddDialog(false);
   });
-
-  document.getElementById('butAddCancel').addEventListener('click', function() {
+*/
+  //document.getElementById('butAddCancel').addEventListener('click', function() {
     // Close the add new city dialog
-    app.toggleAddDialog(false);
+    //app.toggleAddDialog(false);
+  //});
+  
+  document.getElementById('butEditCancel').addEventListener('click', function() {
+    // Close the user edit dialog
+    app.toggleUserDialog(false);
   });
+
 
 
   /*****************************************************************************
@@ -128,14 +134,14 @@
     var wind = data.channel.wind;
 
     var card = app.visibleCards[data.key];
-    if (!card) {
-      card = app.cardTemplate.cloneNode(true);
-      card.classList.remove('cardTemplate');
-      card.querySelector('.location').textContent = data.label;
-      card.removeAttribute('hidden');
-      app.container.appendChild(card);
-      app.visibleCards[data.key] = card;
-    }
+   // if (!card) {
+     // card = app.cardTemplate.cloneNode(true);
+     // card.classList.remove('cardTemplate');
+     // card.querySelector('.location').textContent = data.label;
+      //card.removeAttribute('hidden');
+      //app.container.appendChild(card);
+      //app.visibleCards[data.key] = card;
+    //}
 
     // Verifies the data provide is newer than what's already visible
     // on the card, if it's not bail, if it is, continue and update the
