@@ -21,8 +21,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
   <title>Crime Away PWA</title>
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
   <link rel="stylesheet" type="text/css" href="styles/inline.css">
 
   <!-- TODO add manifest here -->
@@ -38,9 +41,12 @@
 <body>
 
   <header class="header">
+
     <h1 class="header__title">Crime Away PWA</h1>
-    <!--button id="butRefresh" class="headerButton" aria-label="Refresh"></button-->
-    <!--button id="butAdd" class="headerButton" aria-label="Add"></button-->
+    <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
+    <button id="butAdd" class="headerButton" aria-label="Add"></button>
+    <button id="butSignup" class="headerButton" aria-label="Signup"></button>
+
     <button id="butUser" class="headerButton" aria-label="User"></button>
   </header>
 
@@ -167,10 +173,28 @@
     </div>
   </div>
 
+  <div class="dialog-container signup">
+    <div class="dialog">
+      <div class="dialog-title">New User Signup</div>
+      <div class="dialog-body">
+        <input placeholder="First Name" type="text" required>
+        <input placeholder="Last Name" type="text" required>
+        <input placeholder="Phone (optional)" type="tel">
+        <input placeholder="Email (optional)" type="email">
+        <input placeholder="Address (optional)" type="text">
+      </div>
+      <div class="dialog-buttons">
+        <button id="butSignupConfirm" class="button">Signup</button>
+        <button id="butSignupCancel" class="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <div class="dialog-container user">
     <div class="dialog">
       <div class="dialog-title">Edit User Data</div>
       <div class="dialog-body">
+
         <form class="pure-form pure-form-aligned">
           <fieldset>
 
@@ -210,6 +234,7 @@
 
           </fieldset>
         </form>        
+
   </div>
 
   <div class="loader">
