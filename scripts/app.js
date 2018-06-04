@@ -97,15 +97,9 @@
 */
   //document.getElementById('butAddCancel').addEventListener('click', function() {
     // Close the add new city dialog
-<<<<<<< HEAD
-    app.toggleAddDialog(false);
-  });
-
-=======
     //app.toggleAddDialog(false);
   //});
   
->>>>>>> origin/master
   document.getElementById('butEditCancel').addEventListener('click', function() {
     // Close the user edit dialog
     app.toggleUserDialog(false);

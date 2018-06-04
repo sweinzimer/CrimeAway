@@ -1,12 +1,12 @@
 /*
  * Copyright 2016 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-* {
+ * {
   box-sizing: border-box; }
 
 html, body {
@@ -97,13 +97,13 @@ body {
   transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s, -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
   z-index: 1000; }
   .header .headerButton {
-    width: 24px;
+    width: 100px;
     height: 24px;
     margin-right: 16px;
-    text-indent: -30000px;
+    /* text-indent: -30000px; */
     overflow: hidden;
     opacity: 0.54;
-    -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+    /* -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1); */
     transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
     border: none;
     outline: none;
@@ -112,23 +112,12 @@ body {
     background: url(/images/ic_refresh_white_24px.svg) center center no-repeat; }
   .header #butAdd {
     background: url(/images/ic_add_white_24px.svg) center center no-repeat; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  .header #butSignup {
-    background: url(CrimeAway/images/account-edit.svg) center center no-repeat; }
->>>>>>> origin/master
   .header #butUser {
-    background: url(CrimeAway/images/account-edit.svg) center center no-repeat; }
-        
+    background: url(/images/account-edit.svg) center center no-repeat; }
+  .header #butSignup {
+    background: url(/images/account-edit.svg) center center no-repeat; }
+  
 
-=======
-  .header #butSignup {
-    background: url(/images/account-edit.svg) center center no-repeat; }
-  .header #butUser {
-    background: url(/images/account-edit.svg) center center no-repeat; }
-        
->>>>>>> origin/new-user-sign-up
 .header__title {
   font-weight: 400;
   font-size: 20px;
