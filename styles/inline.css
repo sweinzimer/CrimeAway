@@ -113,8 +113,14 @@ body {
   .header #butAdd {
     background: url(/images/ic_add_white_24px.svg) center center no-repeat; }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  .header #butSignup {
+    background: url(CrimeAway/images/account-edit.svg) center center no-repeat; }
+>>>>>>> origin/master
   .header #butUser {
-    background: url(/images/account-edit.svg) center center no-repeat; }
+    background: url(CrimeAway/images/account-edit.svg) center center no-repeat; }
+        
 
 =======
   .header #butSignup {

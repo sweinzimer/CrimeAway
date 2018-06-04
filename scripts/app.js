@@ -36,14 +36,29 @@
    *
    ****************************************************************************/
 
-  document.getElementById('butRefresh').addEventListener('click', function() {
+  //document.getElementById('butRefresh').addEventListener('click', function() {
     // Refresh all of the forecasts
-    app.updateForecasts();
+    //app.updateForecasts();
+  //});
+
+  //document.getElementById('butAdd').addEventListener('click', function() {
+    // Open/show the add new city dialog
+    //app.toggleAddDialog(true);
+  //});
+
+  document.getElementById('butSignup').addEventListener('click', function() {
+    app.toggleSignupDialog(true);
   });
 
-  document.getElementById('butAdd').addEventListener('click', function() {
-    // Open/show the add new city dialog
-    app.toggleAddDialog(true);
+  document.getElementById('butSignupConfirm').addEventListener('click', function() {
+    // TODO
+
+    // Hide the dialog.
+    app.toggleSignupDialog(false);
+  });
+
+  document.getElementById('butSignupCancel').addEventListener('click', function() {
+    app.toggleSignupDialog(false);
   });
 
   document.getElementById('butSignup').addEventListener('click', function() {
@@ -65,7 +80,7 @@
     app.toggleUserDialog(true);
   });
 
-  document.getElementById('butAddCity').addEventListener('click', function() {
+ /* document.getElementById('butAddCity').addEventListener('click', function() {
     // Add the newly selected city
     var select = document.getElementById('selectCityToAdd');
     var selected = select.options[select.selectedIndex];
@@ -79,12 +94,18 @@
     app.saveSelectedCities();
     app.toggleAddDialog(false);
   });
-
-  document.getElementById('butAddCancel').addEventListener('click', function() {
+*/
+  //document.getElementById('butAddCancel').addEventListener('click', function() {
     // Close the add new city dialog
+<<<<<<< HEAD
     app.toggleAddDialog(false);
   });
 
+=======
+    //app.toggleAddDialog(false);
+  //});
+  
+>>>>>>> origin/master
   document.getElementById('butEditCancel').addEventListener('click', function() {
     // Close the user edit dialog
     app.toggleUserDialog(false);
@@ -134,57 +155,30 @@
     var wind = data.channel.wind;
 
     var card = app.visibleCards[data.key];
-    if (!card) {
-      card = app.cardTemplate.cloneNode(true);
-      card.classList.remove('cardTemplate');
-      card.querySelector('.location').textContent = data.label;
-      card.removeAttribute('hidden');
-      app.container.appendChild(card);
-      app.visibleCards[data.key] = card;
-    }
+   // if (!card) {
+     // card = app.cardTemplate.cloneNode(true);
+     // card.classList.remove('cardTemplate');
+     // card.querySelector('.location').textContent = data.label;
+      //card.removeAttribute('hidden');
+      //app.container.appendChild(card);
+      //app.visibleCards[data.key] = card;
+    //}
 
     // Verifies the data provide is newer than what's already visible
     // on the card, if it's not bail, if it is, continue and update the
     // time saved in the card
-    var cardLastUpdatedElem = card.querySelector('.card-last-updated');
-    var cardLastUpdated = cardLastUpdatedElem.textContent;
-    if (cardLastUpdated) {
-      cardLastUpdated = new Date(cardLastUpdated);
+    //var cardLastUpdatedElem = card.querySelector('.card-last-updated');
+    //var cardLastUpdated = cardLastUpdatedElem.textContent;
+    //if (cardLastUpdated) {
+      //cardLastUpdated = new Date(cardLastUpdated);
       // Bail if the card has more recent data then the data
-      if (dataLastUpdated.getTime() < cardLastUpdated.getTime()) {
-        return;
-      }
-    }
-    cardLastUpdatedElem.textContent = data.created;
+      //if (dataLastUpdated.getTime() < cardLastUpdated.getTime()) {
+      //  return;
+      //}
+    //}
+    //cardLastUpdatedElem.textContent = data.created;
 
-    card.querySelector('.description').textContent = current.text;
-    card.querySelector('.date').textContent = current.date;
-    card.querySelector('.current .icon').classList.add(app.getIconClass(current.code));
-    card.querySelector('.current .temperature .value').textContent =
-      Math.round(current.temp);
-    card.querySelector('.current .sunrise').textContent = sunrise;
-    card.querySelector('.current .sunset').textContent = sunset;
-    card.querySelector('.current .humidity').textContent =
-      Math.round(humidity) + '%';
-    card.querySelector('.current .wind .value').textContent =
-      Math.round(wind.speed);
-    card.querySelector('.current .wind .direction').textContent = wind.direction;
-    var nextDays = card.querySelectorAll('.future .oneday');
-    var today = new Date();
-    today = today.getDay();
-    for (var i = 0; i < 7; i++) {
-      var nextDay = nextDays[i];
-      var daily = data.channel.item.forecast[i];
-      if (daily && nextDay) {
-        nextDay.querySelector('.date').textContent =
-          app.daysOfWeek[(i + today) % 7];
-        nextDay.querySelector('.icon').classList.add(app.getIconClass(daily.code));
-        nextDay.querySelector('.temp-high .value').textContent =
-          Math.round(daily.high);
-        nextDay.querySelector('.temp-low .value').textContent =
-          Math.round(daily.low);
-      }
-    }
+   
     if (app.isLoading) {
       app.spinner.setAttribute('hidden', true);
       app.container.removeAttribute('hidden');
