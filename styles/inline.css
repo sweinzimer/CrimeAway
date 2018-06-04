@@ -98,9 +98,22 @@ body {
   transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s, -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
   z-index: 1000; }
   .header .headerButtonR {
+    font-size: 17px;
     width: 100px;
     height: 24px;
     margin-right: 16px;
+    /* text-indent: -30000px; */
+    overflow: hidden;
+    /* opacity: 0.54; */
+    /* -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1); */
+    transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+    border: none;
+    outline: none;
+    cursor: pointer; }
+  .header .headerButtonL {
+    width: 100px;
+    height: 24px;
+    margin-left: 16px;
     /* text-indent: -30000px; */
     overflow: hidden;
     opacity: 0.54;
@@ -108,19 +121,7 @@ body {
     transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
     border: none;
     outline: none;
-    cursor: pointer; }
-    .header .headerButtonL {
-      width: 100px;
-      height: 24px;
-      margin-left: 16px;
-      /* text-indent: -30000px; */
-      overflow: hidden;
-      opacity: 0.54;
-      /* -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1); */
-      transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
-      border: none;
-      outline: none;
-      cursor: pointer; }  
+    cursor: pointer; }  
   .header #butRefresh {
     background: url(/images/ic_refresh_white_24px.svg) center center no-repeat; }
   .header #butAdd {
@@ -426,9 +427,28 @@ body {
   background-color: #3f51b5; }
 
 
+/* chris' special classes */
+.greeter {
+  color: #cc0000;
+  /* left: 50%; */
+  margin: 1% 0 0 7%;
+  padding: 10px 0 10px 0;
+}
+
 .opt-box {
   color: white;
   background-color: rgb(128,128,128);
   margin: 1% 4% 1% 4%;
   padding: 10px;
+}
+
+.opt-title {
+  cursor: pointer;
+  padding: 5px 5px 5px 5px;
+  background-color: rgb(128,128,128);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 2px 4px 10px 3px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+ }
+
+.opt-text {
+  font-size: 14px;
  }
