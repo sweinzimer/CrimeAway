@@ -110,14 +110,14 @@
     var wind = data.channel.wind;
 
     var card = app.visibleCards[data.key];
-    if (!card) {
-      card = app.cardTemplate.cloneNode(true);
-      card.classList.remove('cardTemplate');
-      card.querySelector('.location').textContent = data.label;
-      card.removeAttribute('hidden');
-      app.container.appendChild(card);
-      app.visibleCards[data.key] = card;
-    }
+   // if (!card) {
+     // card = app.cardTemplate.cloneNode(true);
+     // card.classList.remove('cardTemplate');
+     // card.querySelector('.location').textContent = data.label;
+      //card.removeAttribute('hidden');
+      //app.container.appendChild(card);
+      //app.visibleCards[data.key] = card;
+    //}
 
     // Verifies the data provide is newer than what's already visible
     // on the card, if it's not bail, if it is, continue and update the
