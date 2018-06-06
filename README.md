@@ -11,6 +11,11 @@
 # Clone and navigate to repository
 git clone https://github.com/sweinzimer/crimeaway
 cd crimeaway
+```
+
+Create a `config.json` file using [`config.template.json`](./config.template.json) as a template.
+
+```sh
 # Create database
 mysqladmin -u root -p create crimeawaydb
 # Initialize/reset database using file.
