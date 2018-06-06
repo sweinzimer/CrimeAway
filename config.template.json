@@ -1,0 +1,10 @@
+{
+  "secret": "[a_secret]",
+  "db": {
+    "connectionLimit": 10,
+    "host": "localhost",
+    "user": "[your_user or root]",
+    "password": "[your_user_password]",
+    "database": "crimeawaydb"
+  }
+}
