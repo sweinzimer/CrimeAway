@@ -1,7 +1,7 @@
 {
   "name": "crimeaway",
   "version": "0.1.0",
-  "description": "",
+  "description": "Group project for CS361 Software Engineering I. CrimeAway is meant to allow users to report crimes in real-time, and to allow law enforcement to utilize reports in the performance of their duties.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sweinzimer/CrimeAway/issues"
   },
-  "homepage": "https://github.com/sweinzimer/CrimeAway#readme"
+  "homepage": "https://github.com/sweinzimer/CrimeAway#readme",
+  "dependencies": {
+    "express-mysql-session": "^1.3.0"
+  }
 }
