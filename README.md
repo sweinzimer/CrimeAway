@@ -3,7 +3,10 @@
 ## Setup (OSU Flip)
 
 ```sh
-# Clone and navigate to repository
+# SSH into flip.
+ssh USERNAME@access.engr.oregonstate.edu
+
+# Clone and navigate to repository.
 git clone https://github.com/sweinzimer/crimeaway
 cd crimeaway
 ```
@@ -24,6 +27,7 @@ source crimeawaydb.sql
 
 # Install dependencies
 npm install
+
 # Start server
 npm start
 ```
