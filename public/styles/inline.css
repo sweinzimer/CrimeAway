@@ -98,6 +98,7 @@ body {
   transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s, -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
   z-index: 1000; }
   .header .headerButtonR {
+    background: none;
     font-size: 17px;
     width: 100px;
     height: 24px;
@@ -126,11 +127,6 @@ body {
     background: url(/images/ic_refresh_white_24px.svg) center center no-repeat; }
   .header #butAdd {
     background: url(/images/ic_add_white_24px.svg) center center no-repeat; }
-  .header #butUser {
-    background: url(/images/account-edit.svg) center center no-repeat; }
-  .header #butSignup {
-    background: url(/images/account-edit.svg) center center no-repeat; }
-  
 
 .header__title {
   font-weight: 400;

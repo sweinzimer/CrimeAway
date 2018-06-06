@@ -43,7 +43,7 @@
     <h1 class="header__title">CrimeAway PWA</h1>
     <button id="butRefresh" class="headerButtonL" aria-label="Refresh"></button>
     <button id="butAdd" class="headerButtonL" aria-label="Add"></button>
-    <button id="butSignup" class="headerButtonR" aria-label="Signup">SignUp</button>
+    <button id="butLogin" class="headerButtonR" aria-label="Login">Login</button>
     <button id="butUser" class="headerButtonR" aria-label="User">Edit</button>
   </header>
 
@@ -270,19 +270,20 @@
     </div>
   </div>
 
-  <div class="dialog-container signup">
+  <div class="dialog-container login">
     <div class="dialog">
-      <div class="dialog-title">New User Signup</div>
+      <div class="dialog-title">New User Login</div>
       <div class="dialog-body">
         <input placeholder="First Name" type="text" required>
         <input placeholder="Last Name" type="text" required>
+        <input placeholder="Email" type="email" required>
         <input placeholder="Phone (optional)" type="tel">
-        <input placeholder="Email (optional)" type="email">
         <input placeholder="Address (optional)" type="text">
+        <input placeholder="Password" type="password" required>
       </div>
       <div class="dialog-buttons">
-        <button id="butSignupConfirm" class="button">Signup</button>
-        <button id="butSignupCancel" class="button">Cancel</button>
+        <button id="butLoginConfirm" class="button">Login</button>
+        <button id="butLoginCancel" class="button">Cancel</button>
       </div>
     </div>
   </div>
