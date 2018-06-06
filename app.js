@@ -25,11 +25,11 @@ app.use(express.static('public'))
 
 // Handle login requests.
 app.post('/login', (req, res) => {
-  authenticate(req.body.email, req.body.password, (err, user) => {
-    // Failed to authenticate, redirect back the to the login page.
+  authenticate(req.body.email, req.body.pass, (err, user) => {
+    // Failed to authenticate, redirect back to the homepage.
     if (err !== null) {
       req.session.error = 'Authentication failed, please check your username and password.'
-      res.redirect('/login')
+      res.redirect('/')
       return
     }
 
@@ -44,12 +44,19 @@ app.post('/login', (req, res) => {
   });
 })
 
+// Handle logout requests.
+app.get('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/')
+  })
+})
+
 // Run the server on port 3000.
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 
 function authenticate(email, pass, fn) {
   // Query database for user.
-  let sql = 'SELECT * FROM users WHERE email = '+pool.escape(email);
+  let sql = 'SELECT * FROM user WHERE email = '+pool.escape(email);
   pool.query(sql, (err, results, fields) => {
     // Check for an error querying the database.
     if (err !== null) {
