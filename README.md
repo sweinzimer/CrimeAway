@@ -1,11 +1,6 @@
 # CrimeAway
 
-## Requirements
-
-- [Node.js](https://nodejs.org/en/download/)
-- [MySQL](https://dev.mysql.com/doc/refman/5.7/en/installing.html)
-
-## Setup (Unix)
+## Setup (OSU Flip)
 
 ```sh
 # Clone and navigate to repository
@@ -15,11 +10,18 @@ cd crimeaway
 
 Create a `config.json` file using [`config.template.json`](./config.template.json) as a template.
 
+Change the `port` in [`app.js`](./app.js) to something unused.
+
 ```sh
-# Create database
-mysqladmin -u root -p create crimeawaydb
+# Connect to database (password is last 4 of student ID until changed).
+mysql -u cs361_USERNAME -p -h classmysql.engr.oregonstate.edu cs361_USERNAME
+
 # Initialize/reset database using file.
-mysql -u root -p crimeawaydb < crimeawaydb.sql 
+source crimeawaydb.sql
+
+# Disconnect from database.
+\q
+
 # Install dependencies
 npm install
 # Start server

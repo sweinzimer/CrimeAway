@@ -4,6 +4,8 @@ const mysql = require('mysql')
 const session = require('express-session')
 const config = require('./config.json')
 
+const port = 31349
+
 // Create the express server.
 const app = module.exports = express()
 
@@ -51,8 +53,8 @@ app.get('/logout', (req, res) => {
   })
 })
 
-// Run the server on port 3000.
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+// Run the server.
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 function authenticate(email, pass, fn) {
   // Query database for user.
