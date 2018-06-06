@@ -1,0 +1,19 @@
+{
+  "name": "crimeaway",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sweinzimer/CrimeAway.git"
+  },
+  "author": "Adam Deaton, Christopher Pavlovich, Matthew Feidt, Myung Jin Song, Samuel Weinzimer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sweinzimer/CrimeAway/issues"
+  },
+  "homepage": "https://github.com/sweinzimer/CrimeAway#readme"
+}
