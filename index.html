@@ -78,7 +78,7 @@
     <article class="opt-box">
       <h4 class="opt-title">Search reports</h4>
       <div class="opt-text">
-          <input type="text" id="searchBox" onkeyup="myFunction()" placeholder="Search for..">
+          <input type="text" style="color: black;" id="searchBox" onkeyup="CheckSearch(event)"  placeholder="Search for..">
           
 <div class="dropdown">
     <button id="searchButton" onclick="ShowOptions()" class="dropbtn" value="casenumber">Case Number</button>
@@ -90,7 +90,7 @@
         <a href="#status" onclick="ChangeFilter('Status')">Status</a> 
       </div>
     </div>
-    <table id="myTable">
+    <table id="searchTable">
       
         <tr >
           <th >Case Number</th>
@@ -133,7 +133,47 @@
     function ShowOptions() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
-    
+    function CheckSearch(event) {
+    var search = document.getElementById("searchBox").value;
+    if (event.keyCode === 13) {
+        FilterTable(search, document.getElementById("searchButton").innerHTML)
+    }
+};
+
+function FilterTable(value, type)
+{
+ 
+  switch(type){
+  case "Date":
+      alert(type);
+  }
+};
+
+function BuildTable(items)
+{
+  var t = document.getElementById("searchTable");
+  t.innerHTML="";
+  items.forEach(function(element) {
+    var row = document.createElement('tr');
+    row.appendChild(CreateTableCell(element.Id));
+    row.appendChild(CreateTableCell(element.Title));
+    row.appendChild(CreateTableCell(element.Description));
+    row.appendChild(CreateTableCell(element.Street + " " + element.City +" , " + element.State));
+    row.appendChild(CreateTableCell(element.Date));
+    row.appendChild(CreateTableCell(element.Submitted));    
+    row.appendChild(CreateTableCell(element.Severity));
+    row.appendChild(CreateTableCell(element.Crimetype));
+    t.appendChild(row);
+  }, this);
+
+};
+
+function (value)
+{
+  var td = document.createElement('td')
+  td.appendChild(document.createTextNode(value));
+  return td;
+}
     function ChangeFilter(name)
     {
       var btn = document.getElementById("searchButton");
