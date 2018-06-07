@@ -168,7 +168,12 @@ function BuildTable(items)
 
 };
 
-
+function (value)
+{
+  var td = document.createElement('td')
+  td.appendChild(document.createTextNode(value));
+  return td;
+}
     function ChangeFilter(name)
     {
       var btn = document.getElementById("searchButton");
