@@ -1,4 +1,4 @@
-/*
+SignUp/*
  * Copyright 2016 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -101,7 +101,7 @@ body {
     font-size: 17px;
     width: 100px;
     height: 24px;
-    margin-right: 16px;
+    margin-right: 6px;
     /* text-indent: -30000px; */
     overflow: hidden;
     /* opacity: 0.54; */
@@ -128,7 +128,7 @@ body {
     background: url(/images/ic_add_white_24px.svg) center center no-repeat; }
   .header #butUser {
     background: url(/images/account-edit.svg) center center no-repeat; }
-  .header #butSignup {
+  .header #butSignUp {
     background: url(/images/account-edit.svg) center center no-repeat; }
 
 
