@@ -1,4 +1,4 @@
-<!--
+CrimeAway PWA PWA<!--
  Copyright 2016 Google Inc.
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,110 +38,44 @@
 <body>
 
   <header class="header">
-    <h1 class="header__title">Weather PWA</h1>
-    <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
-    <button id="butAdd" class="headerButton" aria-label="Add"></button>
-    <button id="butUser" class="headerButton" aria-label="User"></button>
+    <h1 class="header__title">CrimeAway PWA</h1>
+    <!-- <button id="butRefresh" class="headerButtonL" aria-label="Refresh"></button>
+    <button id="butAdd" class="headerButtonL" aria-label="Add"></button> -->
+    <button id="butSignup" class="headerButtonR" aria-label="Signup">SignUp</button>
+    <button id="butUser" class="headerButtonR" aria-label="User">Edit</button>
   </header>
 
+
+
   <main class="main">
-    <div class="card cardTemplate weather-forecast" hidden>
-      <div class="city-key" hidden></div>
-      <div class="card-last-updated" hidden></div>
-      <div class="location"></div>
-      <div class="date"></div>
-      <div class="description"></div>
-      <div class="current">
-        <div class="visual">
-          <div class="icon"></div>
-          <div class="temperature">
-            <span class="value"></span><span class="scale">°F</span>
-          </div>
-        </div>
-        <div class="description">
-          <div class="humidity"></div>
-          <div class="wind">
-            <span class="value"></span>
-            <span class="scale">mph</span>
-            <span class="direction"></span>°
-          </div>
-          <div class="sunrise"></div>
-          <div class="sunset"></div>
-        </div>
+
+    <article class="greeter">
+      - Welcome to CrimeAway! Please choose an option below or sign up with a menu above!
+    </article>
+
+    <article class="opt-box">
+      <h4 class="opt-title">Report a Crime (coming soon)</h4>
+      <div class="opt-text">
+        <p>This feature is in testing and will be coming soon!</p>
+        <p>Can you even believe it? You can call from right here!</p>
       </div>
-      <div class="future">
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
+    </article>
+
+    <article class="opt-box">
+      <h4 class="opt-title">View My Reports (coming soon)</h4>
+      <div class="opt-text">
+        <p>Logged in? You can soon view reports here.</p>
       </div>
-    </div>
+    </article>
+
+    <article class="opt-box">
+      <h4 class="opt-title">What should I be aware of in my area?? (coming soon)</h4>
+      <div class="sum-text-s">
+          <p>Such new features.</p>
+        </div>
+    </article>
+
+
   </main>
 
   <div class="dialog-container add">
