@@ -46,18 +46,18 @@
     //app.toggleAddDialog(true);
   //});
 
-  document.getElementById('butLogin').addEventListener('click', function() {
-    app.toggleLoginDialog(true);
+  document.getElementById('butLogIn').addEventListener('click', function() {
+    app.toggleLogInDialog(true);
   });
 
-  document.getElementById('butLoginConfirm').addEventListener('click', function() {
+  document.getElementById('butLogInConfirm').addEventListener('click', function() {
 
     // Hide the dialog.
-    app.toggleLoginDialog(false);
+    app.toggleLogInDialog(false);
   });
 
-  document.getElementById('butLoginCancel').addEventListener('click', function() {
-    app.toggleLoginDialog(false);
+  document.getElementById('butLogInCancel').addEventListener('click', function() {
+    app.toggleLogInDialog(false);
   });
 
   document.getElementById('butUser').addEventListener('click', function() {
@@ -106,7 +106,7 @@
     }
   };
 
-  app.toggleLoginDialog = function(visible) {
+  app.toggleLogInDialog = function(visible) {
     if (visible) {
       app.loginDialog.classList.add('dialog-container--visible');
     } else {
