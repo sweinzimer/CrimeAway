@@ -16,98 +16,200 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Summary</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles/inline.css">
 
-    <title>CrimeAway PWA</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="styles/inline.css">
-
-    <!-- TODO add manifest here -->
-    <link rel="manifest" href="/manifest.json">
-    <!-- Add to home screen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Report Summary">
-    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
-    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#2F3BA2">
-  </head>
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Report Summary>
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+</head>
 <body>
 
   <header class="header">
-    <h1 class="header__title">Report Details</h1>
-    <!-- <button id="butRefresh" class="headerButtonL" aria-label="Refresh"></button>
-    <button id="butAdd" class="headerButtonL" aria-label="Add"></button> -->
-    <button id="butLogIn" class="headerButtonR" aria-label="Signup">
-      <a href="login.html">
-        LogIn
-      </a>
-    </button>
-    <button id="butSignUp" class="headerButtonR" aria-label="Signup">SignUp</button>
-    <button id="butUser" class="headerButtonR" aria-label="User">Edit</button>
+    <h1 class="header__title">CrimeAway: Report Summary</h1>
+    <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
+    <button id="butAdd" class="headerButton" aria-label="Add"></button>
+    <button id="butUser" class="headerButton" aria-label="User"></button>
   </header>
 
   <main class="main">
-    <div class="dialog-container add">
-      <div class="dialog">
-        <div class="dialog-title">blah</div>
-
+    <div class="card cardTemplate weather-forecast" hidden>
+      <div class="city-key" hidden></div>
+      <div class="card-last-updated" hidden></div>
+      <div class="location"></div>
+      <div class="date"></div>
+      <div class="description"></div>
+      <div class="current">
+        <div class="visual">
+          <div class="icon"></div>
+          <div class="temperature">
+            <span class="value"></span><span class="scale">°F</span>
+          </div>
+        </div>
+        <div class="description">
+          <div class="humidity"></div>
+          <div class="wind">
+            <span class="value"></span>
+            <span class="scale">mph</span>
+            <span class="direction"></span>°
+          </div>
+          <div class="sunrise"></div>
+          <div class="sunset"></div>
+        </div>
+      </div>
+      <div class="future">
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>°
+          </div>
         </div>
       </div>
     </div>
+  </main>
 
-    <div class="dialog-container user">
-      <div class="dialog">
-        <div class="dialog-title">Edit User Data</div>
-          <div class="dialog-body">
-            <form class="pure-form pure-form-aligned">
-              <fieldset>
-                <div class="pure-u-1 pure-u-md-1-2">
-                  <label for="name">First Name</label>
-                  <input id="name" class="pure-u-23-24" type="text" placeholder="First Name..">
-                </div>
-
-                <div class="pure-u-1 pure-u-md-1-2">
-                  <label for="password">Last Name</label>
-                  <input id="password" class="pure-u-23-24" type="text" placeholder="Last Name..">
-                </div>
-
-                <div class="pure-u-1 pure-u-md-1-2">
-                  <label for="state">Edit This</label>
-                  <select id="state" class="pure-control-group">
-                    <option>Phone Number</option>
-                    <option>Email</option>
-                    <option>Address</option>
-                  </select>
-                  <input style="display: inline-block;" type="text" placeholder="Value" required="">
-                </div>
-
-                <form action="/action_page.php">Update Picture
-                  <input type="file" name="pic" accept="images/*">
-                </form>
-                <div class="dialog-buttons">
-                  <button id="butEditConfirm" class="button">Edit</button>
-                  <button id="butEditCancel" class="button">Cancel</button>
-                </div>
-
-              </fieldset>
-            </form>
+  <div class="dialog-container add">
+    <div class="dialog">
+      <div class="dialog-title">Add new city</div>
+      <div class="dialog-body">
+        <select id="selectCityToAdd">
+          <!-- Values map to Yahoo Weather API Where On Earth Identifiers (WOEIDs).
+               https://developer.yahoo.com/weather/documentation.html#req -->
+          <option value="2357536">Austin, TX</option>
+          <option value="2367105">Boston, MA</option>
+          <option value="2379574">Chicago, IL</option>
+          <option value="2459115">New York, NY</option>
+          <option value="2475687">Portland, OR</option>
+          <option value="2487956">San Francisco, CA</option>
+          <option value="2490383">Seattle, WA</option>
+        </select>
+      </div>
+      <div class="dialog-buttons">
+        <button id="butAddCity" class="button">Add</button>
+        <button id="butAddCancel" class="button">Cancel</button>
       </div>
     </div>
   </div>
 
-  </main>
+  <div class="dialog-container user">
+    <div class="dialog">
+      <div class="dialog-title">Edit User Data</div>
+      <div class="dialog-body">
+        <form class="pure-form pure-form-aligned">
+          <fieldset>
+            <div class="pure-u-1 pure-u-md-1-2">
+              <label for="name">First Name</label>
+              <input id="name" class="pure-u-23-24" type="text" placeholder="First Name..">
+            </div>
 
-  <!-- <div class="loader">
+            <div class="pure-u-1 pure-u-md-1-2">
+              <label for="password">Last Name</label>
+              <input id="password" class="pure-u-23-24" type="text" placeholder="Last Name..">
+            </div>
+
+            <div class="pure-u-1 pure-u-md-1-2">
+              <label for="state">Edit This</label>
+              <select id="state" class="pure-control-group">
+                <option>Phone Number</option>
+                <option>Email</option>
+                <option>Address</option>
+              </select>
+              <input style="display: inline-block;" type="text" placeholder="Value" required="">
+            </div>
+
+            <form action="/action_page.php">Update Picture
+              <input type="file" name="pic" accept="images/*">
+            </form>
+            <div class="dialog-buttons">
+              <button id="butEditConfirm" class="button">Edit</button>
+              <button id="butEditCancel" class="button">Cancel</button>
+            </div>
+
+          </fieldset>
+        </form>
+  </div>
+
+  <div class="loader">
     <svg viewBox="0 0 32 32" width="32" height="32">
       <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
     </svg>
-  </div> -->
+  </div>
 
   <!-- Uncomment the line below when ready to test with fake data -->
   <script src="scripts/app.js" async></script>
