@@ -75,8 +75,173 @@
         </div>
     </article>
 
+    <article class="opt-box">
+      <h4 class="opt-title">Search reports</h4>
+      <div class="opt-text">
+          <input type="text" style="color: black;" id="searchBox" onkeyup="CheckSearch(event)"  placeholder="Search for..">
+          
+<div class="dropdown">
+    <button id="searchButton" onclick="ShowOptions()" class="dropbtn" value="casenumber">Case Number</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#casenumber" onclick="ChangeFilter('Case Number')">Case Number</a>
+        <a href="#date" onclick="ChangeFilter('Date')">Date</a>
+        <a href="#severity" onclick="ChangeFilter('Severity')">Severity</a>
+        <a href="#type" onclick="ChangeFilter('Type')">Type</a>
+        
+      </div>
+    </div>
+    <table id="searchTable" style="padding: 10px;">
+      
+        <tr >
+          <th >Case Number</th>
+          <th >Report Date</th>
+          <th >Location</th>
+          <th> Jurisdictions</th>
+          <th >Type</th>
+          <th>Severity</th>
+          <th >Status</th>
+          <th >Status Date</th>
+          <th >Note</th>
+        </tr>
+      
+        <tr>
+          <td>1</td>
+          <td>2018-1-5 :: 12:22:35 AM</td>
+          <td>1 Stevens Way, Atlanta, GA</td>
+          <td><li><ul>Georia Tech Police</ul><ul>Atlanta PD</ul></li></td>
+          <td>Breaking And Entering</td>
+          <td>7</td>
+          <td>Police Officers Dispatched</td>
+          <td>2018-6-5 :: 12:27:01 AM</td>
+          <td>Car # 123 Responding</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2018-4-22 :: 10:45:01 PM</td>
+            <td>I95 -Baltimore, MD</td>
+            <td><li><ul></ul><ul>Maryland State Police</ul></li></td>
+            <td>DUI</td>
+            <td>8</td>
+            <td>Suspect In Custody</td>
+            <td>2018-4-23 :: 1:27:01 AM</td>
+            <td>Contacted Reporter for statment</td>
+          </tr>
+      </table>
+    <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function ShowOptions() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    function CheckSearch(event) {
+    var search = document.getElementById("searchBox").value;
+    if (event.keyCode === 13) {
+        FilterTable(search, document.getElementById("searchButton").innerHTML)
+    }
+};
 
-    <div class="dialog-container add">
+function selectWhere(data, propertyName, value) {
+  var ret = [];
+  var j = 0;
+
+    for (var i = 0; i < data.length; i++) {
+      var element = data[i];
+      
+        if (element[propertyName] === value) {
+        ret[j] =  data[i]
+                j++;
+        }
+    }
+    return ret;
+}
+
+function FilterTable(value, type)
+{
+  switch(type){
+    case "Case Number": filterdItems = selectWhere(fullItems, 'id', value);
+    case "Date": filterdItems = selectWhere(fullItems, 'date', value);
+    case "Type": filterdItems = selectWhere(fullItems, 'crimetype', value);
+    case "Severity": filterdItems = selectWhere(fullItems, 'severity', value);
+    
+  }    
+     BuildTable();
+     
+      
+  }
+
+var fullItems = [{"id":"1", "title":"Test", "description":"This is a test", "street":"123 First St", "city":"Metropolis", "state":"MA", "date":"6/6/2018", "submitted":"6/5/2018","severity":"1", "crimetype":"None"}];
+var filterdItems = fullItems;
+BuildTable();
+function BuildTable()
+{
+  var items = filterdItems;
+  
+  var t = document.getElementById("searchTable");
+
+  t.innerHTML="";
+  
+  tbody = document.createElement('tbody');
+  tr = document.createElement('tr');
+  var headerRow = tbody.appendChild(tr);
+  CreateHeaderCell(headerRow, "Id");
+  CreateHeaderCell(headerRow,"Title");
+  CreateHeaderCell(headerRow,"Description");
+  CreateHeaderCell(headerRow,"Location");
+  CreateHeaderCell(headerRow,"Date");
+  CreateHeaderCell(headerRow,"Submitted Date");
+  CreateHeaderCell(headerRow,"Severity");
+  CreateHeaderCell(headerRow,"Crime Type");
+
+   
+   
+   
+  items.forEach(function(element) {
+    var row = document.createElement('tr');
+    CreateTableCell(row, element.id);
+    CreateTableCell(row, element.title);
+    CreateTableCell(row, element.description);
+    CreateTableCell(row, element.street + " " + element.city +" , " + element.state);
+    CreateTableCell(row, element.date);
+    CreateTableCell(row, element.submitted);    
+    CreateTableCell(row, element.severity);
+    CreateTableCell(row, element.crimetype);
+    tbody.appendChild(row);
+  }, this);
+  t.appendChild(tbody);
+};
+
+function CreateHeaderCell(row, value)
+{
+  th = document.createElement('th');
+   row.appendChild(th);
+  th.innerHTML = value;
+}
+    function ChangeFilter(name)
+    {
+      var btn = document.getElementById("searchButton");
+        
+        btn.innerHTML = name;
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function CreateTableCell(table, value)
+    {
+      var cell = table.insertCell();
+  
+      cell.innerHTML = value;
+     
+    }
+    
+    </script>
+    
+          
+           
+    </article>  
+    
+    
+  </main>
+
+  <div class="dialog-container add">
     <div class="dialog">
       <div class="dialog-title">
         Add new city
