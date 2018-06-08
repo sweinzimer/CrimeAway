@@ -1,0 +1,169 @@
+CrimeAway PWA PWA<!--
+ Copyright 2016 Google Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CrimeAway PWA</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
+
+    <!-- TODO add manifest here -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Status Report:">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+  </head>
+<body>
+
+  <header class="header">
+    <h1 class="header__title">CrimeAway PWA</h1>
+    <!-- <button id="butRefresh" class="headerButtonL" aria-label="Refresh"></button>
+    <button id="butAdd" class="headerButtonL" aria-label="Add"></button> -->
+    <button id="butLogIn" class="headerButtonR" aria-label="Signup">
+      <a href="login.html">LogIn</a>
+    </button>
+    <button id="butSignUp" class="headerButtonR" aria-label="Signup">SignUp</button>
+    <button id="butUser" class="headerButtonR" aria-label="User">Manage</button>
+  </header>
+
+
+
+  <main class="main">
+
+    <article class="opt-box">
+      <h4 class="opt-title">Report Title 1</h4>
+      <div class="opt-text">
+        <p>Details: go here</p>
+      </div>
+    </article>
+
+    <article class="opt-box">
+      <h4 class="opt-title">Report Title 2</h4>
+      <div class="opt-text">
+        <p>Details: still listing out what all will be included in summaries</p>
+      </div>
+    </article>
+
+
+  </main>
+
+  <div class="dialog-container add">
+    <div class="dialog">
+      <div class="dialog-title">Add new city</div>
+      <div class="dialog-body">
+        <select id="selectCityToAdd">
+          <!-- Values map to Yahoo Weather API Where On Earth Identifiers (WOEIDs).
+               https://developer.yahoo.com/weather/documentation.html#req -->
+          <option value="2357536">Austin, TX</option>
+          <option value="2367105">Boston, MA</option>
+          <option value="2379574">Chicago, IL</option>
+          <option value="2459115">New York, NY</option>
+          <option value="2475687">Portland, OR</option>
+          <option value="2487956">San Francisco, CA</option>
+          <option value="2490383">Seattle, WA</option>
+        </select>
+      </div>
+      <div class="dialog-buttons">
+        <button id="butAddCity" class="button">Add</button>
+        <button id="butAddCancel" class="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dialog-container user">
+    <div class="dialog">
+      <div class="dialog-title">Edit User Data</div>
+      <div class="dialog-body">
+        <form class="pure-form pure-form-aligned">
+          <fieldset>
+            <div class="pure-u-1 pure-u-md-1-2">
+              <label for="name">First Name</label>
+              <input id="name" class="pure-u-23-24" type="text" placeholder="First Name..">
+            </div>
+
+            <div class="pure-u-1 pure-u-md-1-2">
+              <label for="password">Last Name</label>
+              <input id="password" class="pure-u-23-24" type="text" placeholder="Last Name..">
+            </div>
+
+            <div class="pure-u-1 pure-u-md-1-2">
+              <label for="state">Edit This</label>
+              <select id="state" class="pure-control-group">
+                <option>Phone Number</option>
+                <option>Email</option>
+                <option>Address</option>
+              </select>
+              <input style="display: inline-block;" type="text" placeholder="Value" required="">
+            </div>
+
+            <form action="/action_page.php">Update Picture
+              <input type="file" name="pic" accept="images/*">
+            </form>
+            <div clas    <button id="butLogIn" class="headerButtonR" aria-label="Signup">
+      <a href="login.html">
+        LogIn
+      </a>
+    </button>
+    <button id="butSignUp" class="headerButtonR" aria-label="Signup">SignUp</button>
+    <button id="butUser" class="headerButtonR" aria-label="User">Edit</button>alog-buttons">
+              <button    <button id="butLogIn" class="headerButtonR" aria-label="Signup">
+      <a href="login.html">
+        LogIn
+      </a>
+    </button>
+    <button id="butSignUp" class="headerButtonR" aria-label="Signup">SignUp</button>
+    <button id="butUser" class="headerButtonR" aria-label="User">Edit</button>butEditConfirm" class="button">Edit</button>
+              <button    <button id="butLogIn" class="headerButtonR" aria-label="Signup">
+      <a href="login.html">
+        LogIn
+      </a>
+    </button>
+    <button id="butSignUp" class="headerButtonR" aria-label="Signup">SignUp</button>
+    <button id="butUser" class="headerButtonR" aria-label="User">Edit</button>butEditCancel" class="button">Cancel</button>
+            </div>
+
+          </fieldset>    <button id="butLogIn" class="headerButtonR" aria-label="Signup">
+      <a href="login.html">
+        LogIn
+      </a>
+    </button>
+    <button id="butSignUp" class="headerButtonR" aria-label="Signup">SignUp</button>
+    <button id="butUser" class="headerButtonR" aria-label="User">Edit</button>
+        </form>
+  </div>
+
+  <div class="loader">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+
+  <!-- Uncomment the line below when ready to test with fake data -->
+  <script src="scripts/app.js" async></script>
+
+</body>
+</html>
