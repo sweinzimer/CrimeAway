@@ -25,7 +25,12 @@ app.use(bodyParser.json())
 // Serve static files from the public folder.
 app.use(express.static('public'))
 
-// Handle login requests.
+// Handle login page requests.
+app.get('/login', (req, res) => {
+  res.redirect('/login.html')
+})
+
+// Handle login form submits.
 app.post('/login', (req, res) => {
   authenticate(req.body.email, req.body.pass, (err, user) => {
     // Failed to authenticate, redirect back to the homepage.
