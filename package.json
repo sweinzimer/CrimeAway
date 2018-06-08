@@ -1,0 +1,29 @@
+{
+  "name": "crimeaway",
+  "version": "0.1.0",
+  "description": "Group project for CS361 Software Engineering I. CrimeAway is meant to allow users to report crimes in real-time, and to allow law enforcement to utilize reports in the performance of their duties.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-forever": "forever start app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sweinzimer/CrimeAway.git"
+  },
+  "author": "Adam Deaton, Christopher Pavlovich, Matthew Feidt, Myung Jin Song, Samuel Weinzimer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sweinzimer/CrimeAway/issues"
+  },
+  "homepage": "https://github.com/sweinzimer/CrimeAway#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {
+    "forever": "^0.15.3"
+  }
+}

@@ -24,7 +24,7 @@
     cardTemplate: document.querySelector('.cardTemplate'),
     container: document.querySelector('.main'),
     addDialog: document.querySelector('.add'),
-    signupDialog: document.querySelector('.signup'),
+    loginDialog: document.querySelector('.login'),
     userDialog: document.querySelector('.user'),
     daysOfWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   };
@@ -46,34 +46,18 @@
     //app.toggleAddDialog(true);
   //});
 
-  document.getElementById('butSignup').addEventListener('click', function() {
-    app.toggleSignupDialog(true);
+  document.getElementById('butLogin').addEventListener('click', function() {
+    app.toggleLoginDialog(true);
   });
 
-  document.getElementById('butSignupConfirm').addEventListener('click', function() {
-    // TODO
+  document.getElementById('butLoginConfirm').addEventListener('click', function() {
 
     // Hide the dialog.
-    app.toggleSignupDialog(false);
+    app.toggleLoginDialog(false);
   });
 
-  document.getElementById('butSignupCancel').addEventListener('click', function() {
-    app.toggleSignupDialog(false);
-  });
-
-  document.getElementById('butSignup').addEventListener('click', function() {
-    app.toggleSignupDialog(true);
-  });
-
-  document.getElementById('butSignupConfirm').addEventListener('click', function() {
-    // TODO
-
-    // Hide the dialog.
-    app.toggleSignupDialog(false);
-  });
-
-  document.getElementById('butSignupCancel').addEventListener('click', function() {
-    app.toggleSignupDialog(false);
+  document.getElementById('butLoginCancel').addEventListener('click', function() {
+    app.toggleLoginDialog(false);
   });
 
   document.getElementById('butUser').addEventListener('click', function() {
@@ -122,11 +106,11 @@
     }
   };
 
-  app.toggleSignupDialog = function(visible) {
+  app.toggleLoginDialog = function(visible) {
     if (visible) {
-      app.signupDialog.classList.add('dialog-container--visible');
+      app.loginDialog.classList.add('dialog-container--visible');
     } else {
-      app.signupDialog.classList.remove('dialog-container--visible');
+      app.loginDialog.classList.remove('dialog-container--visible');
     }
   };
 
