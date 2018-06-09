@@ -98,14 +98,9 @@ body {
   transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s, -webkit-transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
   z-index: 1000; }
   .header .headerButtonR {
-<<<<<<< HEAD:styles/inline.css
-    font-size: 15px;
-    /* width: 75px; */
-=======
     background: none;
     font-size: 14px;
     width: 100px;
->>>>>>> login-session:public/styles/inline.css
     height: 24px;
     margin-right: 16px;
     /* text-indent: -30000px; */
