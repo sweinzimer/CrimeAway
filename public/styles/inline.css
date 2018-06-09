@@ -517,3 +517,8 @@ body {
 .dropdown a:hover {background-color: #ddd}
 
 .show {display:block;}
+
+h4 a {
+  text-decoration: inherit;
+  color: inherit;
+}
