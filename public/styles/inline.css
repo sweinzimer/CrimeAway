@@ -455,18 +455,42 @@ body {
   padding: 5px 5px 5px 5px;
   background-color: rgb(128,128,128);
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 2px 4px 10px 3px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
- }
+}
+.log-title {
+  /* cursor: pointer; */
+  padding: 5px 5px 5px 5px;
+  /* background-color: rgb(128,128,128); */
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 2px 4px 10px 3px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+}
 
 .opt-text {
   font-size: 14px;
- }
+}
 
- .log-box {
+.req {
+  /* min-height: 90px; */
+  margin: 0 0 5px 0;
+  padding: 5px 5px 5px 5px;
+}
+
+.req-box {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 2px 4px 10px 3px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+  margin: 15px 15px 0 15px;
+  padding: 5px 5px 5px 5px;
+}
+
+.log-box {
    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 2px 4px 10px 3px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+   padding: 5px 5px 5px 5px;
+ }
+
+.log-box {
+   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 2px 4px 10px 3px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+   padding: 5px 5px 5px 5px;
  }
 
 
- .dropbtn {
+.dropbtn {
   background-color: #4CAF50;
   color: white;
   padding: 16px;
