@@ -60,14 +60,14 @@ body {
 
 .header {
   width: 100%;
-  height: 56px;
+  /* height: 56px; */
   color: #FFF;
   /* background: #3F51B5; */
   background: #cc0000;
   position: fixed;
   font-size: 20px;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 2px 9px 1px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
-  padding: 16px 16px 0 16px;
+  padding: 16px 16px 16px 16px;
   will-change: transform;
   display: -webkit-box;
   display: -webkit-flex;
@@ -100,11 +100,12 @@ body {
   .header .headerButtonR {
     background: none;
     font-size: 14px;
-    width: 100px;
-    height: 24px;
-    margin-right: 16px;
-    /* text-indent: -30000px; */
+    width: 60px;
+    /* height: 24px; */
+    /* margin-right: 10px; */
+    /* text-indent: -30px; */
     overflow: hidden;
+    text-align: center;
     /* opacity: 0.54; */
     /* -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1); */
     transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
@@ -113,7 +114,7 @@ body {
     cursor: pointer; }
   .header .headerButtonL {
     width: 75px;
-    height: 24px;
+    /* height: 24px; */
     /* margin-left: 16px; */
     /* text-indent: -30000px; */
     overflow: hidden;
@@ -123,14 +124,21 @@ body {
     border: none;
     outline: none;
     cursor: pointer; }
-  .header #butRefresh {
-    background: url(/images/ic_refresh_white_24px.svg) center center no-repeat; }
-  .header #butAdd {
-    background: url(/images/ic_add_white_24px.svg) center center no-repeat; }
-  .header #butUser {
-    background: url(/images/account-edit.svg) center center no-repeat; }
-  .header #butSignUp {
-    background: url(/images/account-edit.svg) center center no-repeat; }
+  .header .headerButtonN {
+    background: none;
+    font-size: 14px;
+    width: 20px;
+    /* height: 24px; */
+    /* margin-right: 10px; */
+    /* text-indent: -30px; */
+    overflow: hidden;
+    text-align: center;
+    /* opacity: 0.54; */
+    /* -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1); */
+    transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+    border: none;
+    outline: none;
+  }
 
 .header__title {
   font-weight: 400;
@@ -340,7 +348,7 @@ body {
     .weather-forecast .future .oneday .temp-low {
       color: #888; }
 
-.weather-forecast .icon {
+/* .weather-forecast .icon {
   background-repeat: no-repeat;
   background-size: contain; }
   .weather-forecast .icon.clear-day {
@@ -364,7 +372,7 @@ body {
   .weather-forecast .icon.partly-cloudy-night {
     background-image: url("/images/partly-cloudy.png"); }
   .weather-forecast .icon.thunderstorms {
-    background-image: url("/images/thunderstorm.png"); }
+    background-image: url("/images/thunderstorm.png"); } */
 
 @media (max-width: 450px) {
   .weather-forecast .date, .weather-forecast .description {

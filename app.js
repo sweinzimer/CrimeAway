@@ -8,7 +8,7 @@ const config = require('./config.json')
 const port = 31390
 
 // Create the express server.
-const app = module.exports = express()
+const app = express()
 
 // Create a MySQL database connection pool.
 const pool = mysql.createPool(config.db)
@@ -34,11 +34,11 @@ app.get('/login', function(req, res) {
 })
 
 app.get('/status-reports', function(req, res) {
-  res.redirect('/status-reports.html')
+  res.redirect('/status-reports')
 })
 
-app.get('/report-summary', function(req, res) {
-  res.redirect('/report-summary')
+app.get('/report-summary', (req, res) => {
+  res.redirect('/report-summary.html')
 })
 
 
@@ -67,7 +67,9 @@ app.post('/login', (req, res) => {
 app.post('/status-reports', function(req, res) {
     res.redirect('/status-reports.html');
 })
-
+// app.get('/login', (req, res) => {
+//   res.redirect('/login.html')
+// })
 app.post('/report-summary', function(req, res) {
   res.redirect('/report-summary.html');
 })
