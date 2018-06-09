@@ -1,0 +1,10 @@
+{
+  "secret": "SOME_SECRET",
+  "db": {
+    "connectionLimit": 10,
+    "host": "classmysql.engr.oregonstate.edu",
+    "user": "cs361_USERNAME",
+    "password": "LAST_FOUR_OF_STUDENT_ID",
+    "database": "cs361_USERNAME"
+  }
+}

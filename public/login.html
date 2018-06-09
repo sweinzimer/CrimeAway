@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <!-- <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>CrimeAway PWA</title>
@@ -34,13 +34,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Report Summary">
     <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
-    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <!-- <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png"> -->
     <meta name="msapplication-TileColor" content="#2F3BA2">
   </head>
 <body>
 
   <header class="header">
-    <h1 class="header__title">Report Details</h1>
+    <h1 class="header__title">LogIn</h1>
     <!-- <button id="butRefresh" class="headerButtonL" aria-label="Refresh"></button>
     <button id="butAdd" class="headerButtonL" aria-label="Add"></button> -->
     <button id="butLogIn" class="headerButtonR" aria-label="Signup">
@@ -51,14 +51,17 @@
   </header>
 
   <main class="main">
-    <div class="dialog-container add">
-      <div class="dialog">
-        <div class="dialog-title">blah</div>
 
-        </div>
+    <!-- login window -->
+    <article class="log-box">
+      <!-- <h4 class="opt-title">Username: </h4> -->
+      <div class="opt-text">
+        <input id="username" class="pure-u-23-24" type="text" placeholder="Username..">
+        <input id="password" class="pure-u-23-24" type="text" placeholder="Password..">
       </div>
-    </div>
+    </article>
 
+    <!-- Edit data box -->
     <div class="dialog-container user">
       <div class="dialog">
         <div class="dialog-title">Edit User Data</div>
@@ -95,9 +98,9 @@
 
               </fieldset>
             </form>
+          </div>
       </div>
     </div>
-  </div>
 
   </main>
 
@@ -108,7 +111,7 @@
   </div> -->
 
   <!-- Uncomment the line below when ready to test with fake data -->
-  <script src="scripts/app.js" async></script>
+  <!-- <script src="scripts/app.js" async></script> -->
 
 </body>
 </html>

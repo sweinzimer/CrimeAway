@@ -1,0 +1,18 @@
+<header>
+
+  <link rel="stylesheet" href="style.css" media="screen">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
+  <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
+  <a href="/"><h1 class="site-title"> CrimeAway <i class="fa fa-smile-o"></i></h1></a>
+
+  <nav class="navbar">
+    <ul class = "navitem">
+      {{#if username}}
+        {{> logout}}
+      {{else}}
+        {{> loginSignup}}
+      {{/if}}
+    </ul>
+  </nav>
+
+</header>
