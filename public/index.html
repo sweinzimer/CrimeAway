@@ -56,7 +56,7 @@
       - Welcome to CrimeAway! Please choose an option below or sign up with a menu above!
     </article>
 
-    <article class="opt-box">
+    <article id="report-summary" class="opt-box">
       <h4 class="opt-title">Report a Crime (coming soon)</h4>
       <div class="opt-text">
         <p>This feature is in testing and will be coming soon!</p>
@@ -64,14 +64,14 @@
       </div>
     </article>
 
-    <article class="opt-box">
+    <article id="status-reports" class="opt-box">
       <h4 class="opt-title">View My Reports (coming soon)</h4>
       <div class="opt-text">
         <p>Logged in? You can soon view reports here.</p>
       </div>
     </article>
 
-    <article class="opt-box">
+    <article id="near-me" class="opt-box">
       <h4 class="opt-title">What should I be aware of in my area?? (coming soon)</h4>
       <div class="opt-text">
           <p>Such new features.</p>
@@ -82,7 +82,12 @@
       <h4 class="opt-title">Search reports</h4>
       <div class="opt-text">
           <input type="text" style="color: black;" id="searchBox" onkeyup="CheckSearch(event)"  placeholder="Search for..">
-          
+      </div>
+
+
+
+
+
 <div class="dropdown">
     <button id="searchButton" onclick="ShowOptions()" class="dropbtn" value="casenumber">Case Number</button>
       <div id="myDropdown" class="dropdown-content">
@@ -90,11 +95,11 @@
         <a href="#date" onclick="ChangeFilter('Date')">Date</a>
         <a href="#severity" onclick="ChangeFilter('Severity')">Severity</a>
         <a href="#type" onclick="ChangeFilter('Type')">Type</a>
-        
+
       </div>
     </div>
     <table id="searchTable" style="padding: 10px;">
-      
+
         <tr >
           <th >Case Number</th>
           <th >Report Date</th>
@@ -106,7 +111,7 @@
           <th >Status Date</th>
           <th >Note</th>
         </tr>
-      
+
         <tr>
           <td>1</td>
           <td>2018-1-5 :: 12:22:35 AM</td>
@@ -149,7 +154,7 @@ function selectWhere(data, propertyName, value) {
 
     for (var i = 0; i < data.length; i++) {
       var element = data[i];
-      
+
         if (element[propertyName] === value) {
         ret[j] =  data[i]
                 j++;
@@ -165,11 +170,11 @@ function FilterTable(value, type)
     case "Date": filterdItems = selectWhere(fullItems, 'date', value);
     case "Type": filterdItems = selectWhere(fullItems, 'crimetype', value);
     case "Severity": filterdItems = selectWhere(fullItems, 'severity', value);
-    
-  }    
+
+  }
      BuildTable();
-     
-      
+
+
   }
 
 var fullItems = [{"id":"1", "title":"Test", "description":"This is a test", "street":"123 First St", "city":"Metropolis", "state":"MA", "date":"6/6/2018", "submitted":"6/5/2018","severity":"1", "crimetype":"None"}];
@@ -178,11 +183,11 @@ BuildTable();
 function BuildTable()
 {
   var items = filterdItems;
-  
+
   var t = document.getElementById("searchTable");
 
   t.innerHTML="";
-  
+
   tbody = document.createElement('tbody');
   tr = document.createElement('tr');
   var headerRow = tbody.appendChild(tr);
@@ -195,9 +200,9 @@ function BuildTable()
   CreateHeaderCell(headerRow,"Severity");
   CreateHeaderCell(headerRow,"Crime Type");
 
-   
-   
-   
+
+
+
   items.forEach(function(element) {
     var row = document.createElement('tr');
     CreateTableCell(row, element.id);
@@ -205,7 +210,7 @@ function BuildTable()
     CreateTableCell(row, element.description);
     CreateTableCell(row, element.street + " " + element.city +" , " + element.state);
     CreateTableCell(row, element.date);
-    CreateTableCell(row, element.submitted);    
+    CreateTableCell(row, element.submitted);
     CreateTableCell(row, element.severity);
     CreateTableCell(row, element.crimetype);
     tbody.appendChild(row);
@@ -222,7 +227,7 @@ function CreateHeaderCell(row, value)
     function ChangeFilter(name)
     {
       var btn = document.getElementById("searchButton");
-        
+
         btn.innerHTML = name;
         document.getElementById("myDropdown").classList.toggle("show");
     }
@@ -230,18 +235,18 @@ function CreateHeaderCell(row, value)
     function CreateTableCell(table, value)
     {
       var cell = table.insertCell();
-  
+
       cell.innerHTML = value;
-     
+
     }
-    
+
     </script>
-    
-          
-           
-    </article>  
-    
-    
+
+
+
+    </article>
+
+
   </main>
 
   <div class="dialog-container add">

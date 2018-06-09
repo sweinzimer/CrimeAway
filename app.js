@@ -4,7 +4,8 @@ const mysql = require('mysql')
 const session = require('express-session')
 const config = require('./config.json')
 
-const port = 31349
+
+const port = 31390
 
 // Create the express server.
 const app = module.exports = express()
@@ -25,11 +26,23 @@ app.use(bodyParser.json())
 // Serve static files from the public folder.
 app.use(express.static('public'))
 
+
+/* gets */
 // Handle login page requests.
-app.get('/login', (req, res) => {
-  res.redirect('/login.html')
+app.get('/login', function(req, res) {
+  res.redirect('/login')
 })
 
+app.get('/status-reports', function(req, res) {
+  res.redirect('/status-reports.html')
+})
+
+app.get('/report-summary', function(req, res) {
+  res.redirect('/report-summary')
+})
+
+
+/* posts */
 // Handle login form submits.
 app.post('/login', (req, res) => {
   authenticate(req.body.email, req.body.pass, (err, user) => {
@@ -51,12 +64,24 @@ app.post('/login', (req, res) => {
   });
 })
 
+app.post('/status-reports', function(req, res) {
+    res.redirect('/status-reports.html');
+})
+
+app.post('/report-summary', function(req, res) {
+  res.redirect('/report-summary.html');
+})
+
 // Handle logout requests.
 app.get('/logout', (req, res) => {
   req.session.destroy(() => {
     res.redirect('/')
   })
 })
+
+// document.querySelector('#report-summary').addEventListener('click', report-summary);
+// document.querySelector('#status-reports').addEventListener('click', status-reports);
+// document.querySelector('#near-me').addEventListener('click', near-me);
 
 // Run the server.
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
