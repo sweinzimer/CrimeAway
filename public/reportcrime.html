@@ -1,0 +1,153 @@
+<!--
+ Copyright 2016 Google Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CrimeAway PWA</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
+
+    <!-- TODO add manifest here -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Report Summary">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+  </head>
+<body>
+
+  <header class="header">
+
+    <h1 class="header__title">CrimeAway PWA</h1>
+    <button id="butLogIn" class="headerButtonR" aria-label="LogIn">
+      <!-- <a href="login.html">LogIn</a> -->
+      LogIn
+    </button>
+    <button id="butSignUp" class="headerButtonR" aria-label="SignUp">SignUp</button>
+    <button id="butUser" class="headerButtonR" aria-label="User">Manage</button>
+    <button id="nullButton" class="headerButtonN" aria-label="null"></button>
+
+  </header>
+
+  <main class="main">
+    <h1>Report New Crime</h1>
+    <form id="newCrimeReportEntry">
+        <fieldset>
+                <input type="hidden" id="userid" name="userid" value="1">
+            <lable>Report Title:<br>
+                <input type="text" id="title" name="title" size="30" maxlength="128">
+            </lable><br>
+            <lable>description:<br>
+                <input type="text" id="description" name="description" size"60" maxlength="256">
+            </lable><br>
+            <lable>Street Address:<br>
+                <input type="text" id="street" name="street" size"30" maxlength="64">
+            </lable><br>
+            <lable>City:<br>
+                <input type="text" id="city" name="city" size"30" maxlength="64">
+            </lable><br>
+            <lable>State:<br>
+                <input type="text" id="state" name="state" size"30" maxlength="64">
+            </lable><br>
+            <lable>Date:<br>
+                <input type="date" id="date" name="date">
+            </lable><br>
+                <input type="hidden" id="status" name="status" value="new report">
+    	<lable>Severity: 5 is an emergency - 1 is low priority report<br>
+                <input type="number" id="severity" name="severity" size="30" maxlength="32">
+            </lable><br>
+    	<lable>Crime Type:<br>
+                <input type="text" id="crimetype" name="crimetype" size="30" maxlength="64">
+            </lable><br>
+            <input type="submit" id="addCrimeReport" value="SUBMIT">
+        </fieldset>
+    </form>
+    <form action="http://flip2.engr.oregonstate.edu:8912/reportcrime">
+        <input type="submit" value="Refresh">
+    </form>
+    <form action="http://flip2.engr.oregonstate.edu:31349">
+        <input type="submit" value="Return to Main">
+    </form>
+    <h1>Recent Crime Reports</h1>
+    <span id="tableContent">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Report Number</th>
+                <th>Report Title</th>
+                <th>Description</th>
+                <th>Street Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each results}}
+            <tr border>
+                <td>{{this.id}}</td>
+                <td>{{this.title}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.street}}</td>
+                <td>{{this.city}}</td>
+                <td>{{this.state}}</td>
+                <td>{{this.date}}</td>
+    	    <td>{{this.status}}</td>
+            </tr>
+        {{/each}}
+        </span>
+        </tbody>
+    </table>
+    <script>
+            document.addEventListener('DOMContentLoaded', addCrimeReport);
+
+            function addCrimeReport(){
+               console.log("addData!");
+               document.querySelector('#newCrimeReportEntry').addEventListener('submit', function(event){
+                  event.preventDefault();
+                  var request = new XMLHttpRequest();
+                  var data = {useridInsert:null, titleInsert:null, descriptionInsert:null, streetInsert:null, cityInsert:null, stateInsert:null, dateInsert:null, statusInster:null, severityInsert:null, crimetypeInsert:null};
+                  data.useridInsert = document.getElementById("userid").value;
+                  data.titleInsert = document.getElementById("title").value;
+                  data.descriptionInsert = document.getElementById("description").value;
+                  data.streetInsert = document.getElementById("street").value;
+                  data.cityInsert = document.getElementById("city").value;
+                  data.stateInsert = document.getElementById("state").value;
+                  data.dateInsert = document.getElementById("date").value;
+    	      data.statusInsert = document.getElementById("status").value;
+    	      data.severityInsert = document.getElementById("severity").value;
+    	      data.crimetypeInsert = document.getElementById("crimetype").value;
+                  console.log(data.titleInsert);
+                  request.open("GET", "http://flip2.engr.oregonstate.edu:8912/insert-crimereport?userid=" + data.useridInsert + "&title=" + data.titleInsert + "&description=" + data.descriptionInsert + "&street=" + data.streetInsert + "&city=" + data.cityInsert + "&state=" + data.stateInsert + "&date=" + data.dateInsert + "&status=" + data.statusInsert + "&severity=" + data.severityInsert + "&crimetype=" + data.crimetypeInsert, true);
+                  console.log("Data Added!");
+                  request.send(null);
+             event.preventDefault();
+             })
+           }
+    </script>
+</body>
+</html>
